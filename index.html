@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+    // Jika data login tidak ada, paksa balik ke halaman login
+    if (localStorage.getItem('isLoggedIn') !== 'true') {
+        window.location.href = 'login.html';
+    }
+</script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arya Yusril – Photography Portfolio</title>
+    
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet"
+    />
+</head>
+<body>
+
+<header id="navbar">
+    <div class="logo">ARYA</div>
+
+   <nav class="desktop-nav">
+    <a href="#hero">Home</a>
+    <a href="#about">About</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#testimonials">Testimonials</a> <a href="#contact">Contact</a>
+    <a href="#" onclick="logout()">Logout</a>
+</nav>
+
+    <button class="menu-toggle" id="menu-toggle">☰</button>
+
+    <nav class="mobile-nav" id="mobile-nav">
+    <a href="#hero">Home</a>
+    <a href="#about">About</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#testimonials">Testimonials</a> <a href="#contact">Contact</a>
+</nav>
+</header>
+
+<section id="hero" class="hero">
+    <div class="hero-content" data-aos="fade-up" data-aos-duration="1200">
+        <h1>Visual Stories Through My Lens</h1>
+        <p>Street & Portrait Photography</p>
+        <a href="#gallery" class="cta-button">View Work</a>
+    </div>
+</section>
+
+<section id="about" class="container about">
+    <h2 data-aos="fade-down">About Me</h2>
+    <div class="about-grid">
+        
+        <div class="profile-pic" data-aos="zoom-in" data-aos-duration="1000">
+            <img src="image/arya.jpg" alt="Arya Yusril Profile Photo">
+        </div>
+
+        <div class="story-and-skills">
+             <div class="story" data-aos="fade-right" data-aos-delay="200">
+                <h3>My Story</h3>
+                <p>
+                    Photography is how I understand the world. A single frame can tell
+                    stories words often fail to describe.  I focus on capturing candid moments and the beauty of nature.
+
+
+                </p>
+                <p>
+                    I am a first-semester Informatics student who combines visual
+                    storytelling with technology.
+                </p>
+            </div>
+
+            <div class="skills" data-aos="fade-left" data-aos-delay="400">
+                <h3>Skills & Tools</h3>
+                <span class="skill-tag">Street Photography</span>
+                <span class="skill-tag">Portrait</span>
+                <span class="skill-tag">Landscape</span>
+                <span class="skill-tag">Photo Editing</span>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section id="gallery" class="container gallery">
+    <h2 data-aos="fade-down">Selected Gallery</h2>
+    <p class="gallery-desc" data-aos="fade-up">
+        A curated selection of moments captured from everyday life and nature.
+    </p>
+
+    <div class="filter-buttons" data-aos="zoom-in" data-aos-duration="600">
+        <button class="filter active" data-category="all">All</button>
+        <button class="filter" data-category="nature">Nature</button>
+        <button class="filter" data-category="portrait">Portrait</button>
+        <button class="filter" data-category="landscape">Landscape</button>
+    </div>
+
+    <div class="photo-grid" id="photo-grid">
+    <div class="photo-item open-lightbox" data-category="nature" data-src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05" data-caption="Nature: Misty Forest" data-aos="fade-up">
+        <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=600" alt="Nature">
+    </div>
+    <div class="photo-item open-lightbox" data-category="nature" data-src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e" data-caption="Nature: Sun Rays" data-aos="fade-up">
+        <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=600" alt="Nature">
+    </div>
+    <div class="photo-item open-lightbox" data-category="nature" data-src="https://images.unsplash.com/photo-1501854140801-50d01698950b" data-caption="Nature: Green Hills" data-aos="fade-up">
+        <img src="https://images.unsplash.com/photo-1501854140801-50d01698950b?q=80&w=600" alt="Nature">
+    </div>
+    <div class="photo-item open-lightbox" data-category="nature" data-src="https://images.unsplash.com/photo-1447752875215-b2761acb3c5d" data-caption="Nature: Wooden Bridge" data-aos="fade-up">
+        <img src="https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?q=80&w=600" alt="Nature">
+    </div>
+
+    <div class="photo-item open-lightbox" data-category="portrait" data-src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04" data-caption="Portrait: Urban Style" data-aos="fade-up">
+        <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?q=80&w=600" alt="Portrait">
+    </div>
+    <div class="photo-item open-lightbox" data-category="portrait" data-src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d" data-caption="Portrait: Classic Man" data-aos="fade-up">
+        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=600" alt="Portrait">
+    </div>
+    <div class="photo-item open-lightbox" data-category="portrait" data-src="https://images.unsplash.com/photo-1580489944761-15a19d654956" data-caption="Portrait: Student Life" data-aos="fade-up">
+        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=600" alt="Portrait">
+    </div>
+    <div class="photo-item open-lightbox" data-category="portrait" data-src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d" data-caption="Portrait: Expression" data-aos="fade-up">
+        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=600" alt="Portrait">
+    </div>
+
+    <div class="photo-item open-lightbox" data-category="landscape" data-src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b" data-caption="Landscape: Mountain Range" data-aos="fade-up">
+        <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=600" alt="Landscape">
+    </div>
+    <div class="photo-item open-lightbox" data-category="landscape" data-src="https://images.unsplash.com/photo-1472214103451-9374bd1c798e" data-caption="Landscape: Valley" data-aos="fade-up">
+        <img src="https://images.unsplash.com/photo-1472214103451-9374bd1c798e?q=80&w=600" alt="Landscape">
+    </div>
+    <div class="photo-item open-lightbox" data-category="landscape" data-src="https://images.unsplash.com/photo-1500382017468-9049fed747ef" data-caption="Landscape: Sunset Field" data-aos="fade-up">
+        <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=600" alt="Landscape">
+    </div>
+    <div class="photo-item open-lightbox" data-category="landscape" data-src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e" data-caption="Landscape: Lake House" data-aos="fade-up">
+        <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?q=80&w=600" alt="Landscape">
+    </div>
+</div>
+</section>
+
+<section id="contact" class="container contact">
+    <h2 data-aos="fade-down">Contact</h2>
+    <p data-aos="fade-up">For collaboration or inquiries, feel free to reach me.</p>
+
+    <div class="contact-info" data-aos="fade-up" data-aos-delay="200">
+        <a href="https://wa.me/+6285750905756" target="_blank" class="contact-link">
+            WhatsApp: +6285750905756
+        </a>
+        <a href="mailto:aryayusril@email.com" class="contact-link">
+            Email: aryayusril@email.com
+        </a>
+    </div>
+</section>
+<section id="gallery" class="container gallery">
+    </section>
+
+<section id="testimonials" class="container testimonials-section">
+    <h2 data-aos="fade-down">What Clients Say</h2>
+    <p class="section-subtitle" data-aos="fade-up">Here's what happy clients have to say about my work.</p>
+
+    <div class="testimonial-grid">
+        <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=100&auto=format" alt="Client 1" class="client-photo">
+            <p>"Arya berhasil menangkap esensi acara kami dengan sempurna. Foto-fotonya sangat hidup dan berkesan!"</p>
+            <div class="client-info">
+                <h4>Jessica M.</h4>
+                <span>Event Organizer</span>
+            </div>
+        </div>
+
+        <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=100&auto=format" alt="Client 2" class="client-photo">
+            <p>"Sangat profesional dan hasilnya melampaui ekspektasi. Rekomendasi banget untuk potret profesional!"</p>
+            <div class="client-info">
+                <h4>David S.</h4>
+                <span>Professional Portrait</span>
+            </div>
+        </div>
+
+        <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29329?q=80&w=100&auto=format" alt="Client 3" class="client-photo">
+            <p>"Kualitas fotonya luar biasa, dan Arya sangat kooperatif selama sesi pemotretan. Pasti akan pakai jasanya lagi!"</p>
+            <div class="client-info">
+                <h4>Sarah L.</h4>
+                <span>Wedding Photography</span>
+            </div>
+        </div>
+
+        <div class="testimonial-card" data-aos="fade-up" data-aos-delay="400">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=100&auto=format" alt="Client 4" class="client-photo">
+            <p>"Foto-foto landscape dari perjalanan saya jadi semakin indah berkat sentuhan Arya. Detailnya menakjubkan!"</p>
+            <div class="client-info">
+                <h4>Budi H.</h4>
+                <span>Travel Photography</span>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section id="contact" class="container contact">
+    </section>
+<footer>
+    <p>© 2025 Arya Yusril. All rights reserved.</p>
+</footer>
+
+<script>
+    function logout() {
+        localStorage.removeItem('isLoggedIn');
+        window.location.href = 'login.html';
+    }
+</script>
+
+<a href="https://wa.me/+6285750905756" class="whatsapp-float" target="_blank">💬</a>
+
+<div id="lightbox" class="lightbox">
+    <span class="lightbox-close">&times;</span>
+    <div class="lightbox-content">
+        <img src="" alt="Full size view" id="lightbox-image">
+        <p id="lightbox-caption"></p>
+    </div>
+</div>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init({
+        duration: 1000, 
+        once: true,    
+    });
+</script>
+
+<script src="script.js"></script>
+</body>
+</html>
